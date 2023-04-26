@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Удаление смартфона</title>
+</head>
+<body>
+Вы действительно хотите удалить данный смартфон ?
+<h3>{{phone_id_delete.title}}</h3>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <button type="submit">ДА</button>
+    <button><a href="/delete_or_update_phone_list/">НЕТ</a></button>
+</form>
+</body>
+</html>
