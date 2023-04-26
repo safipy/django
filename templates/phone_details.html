@@ -5,14 +5,26 @@
     <title>Phone Detail</title>
 </head>
 <body>
+{% include 'header.html' %}
 <center>
-  <h2>{{phone_details.title}}</h2>
-  <img src="{{phone_details.image.url}}" alt="">
-  <p>{{phone_details.description}}</p>
-  <iframe src="{{phone_details.video}}" frameborder="0"></iframe>
-  <p>{{phone_details.cost}}</p>
-  <p>{{phone_details.model_phone}}</p>
-  <p>{{phone_details.created_date}}</p>
+
+<div class="card" style="width: 18rem;">
+    <img src="{{phone_details.image.url}}" class="card-img-top"  alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{phone_details.title}}</h5>
+        <p class="card-text">{{phone_details.description}}</p>
+        <p class="card-text">{{phone_details.cost}}</p>
+        <p class="card-text">{{phone_details.model_phone}}</p>
+        <p class="card-text">{{phone_details.created_date}}</p>
+        <a href="/phone_list/" class="btn btn-primary">На главную</a>
+
+    </div>
+</div>
+
+  <iframe src="{{phone_details.video}}" frameborder="0" width="400" height="250"></iframe>
+
 </center>
+
+{% include 'footer.html' %}
 </body>
 </html>
