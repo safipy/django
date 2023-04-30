@@ -19,3 +19,43 @@ class Phone(models.Model):
 
     def __str__(self):
         return self.title
+
+class Reviews(models.Model):
+    RATING = (
+        ('*', '*'),
+        ('**', '**'),
+        ('***', '***'),
+        ('****', '****'),
+        ('*****', '*****'),
+    )
+    phone_choice_comment = models.ForeignKey(Phone, on_delete=models.CASCADE, related_name='comment_object')
+    name = models.CharField(max_length=50)
+    stars = models.CharField(max_length=100, choices=RATING)
+    date_created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
+    class Meta:
+        verbose_name = 'Оценка'
+        verbose_name_plural = 'Оценка смартфона'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

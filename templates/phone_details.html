@@ -9,19 +9,29 @@
 <center>
 
 <div class="card" style="width: 18rem;">
-    <img src="{{phone_details.image.url}}" class="card-img-top"  alt="...">
+    <img src="{{object.image.url}}" class="card-img-top"  alt="...">
     <div class="card-body">
-        <h5 class="card-title">{{phone_details.title}}</h5>
-        <p class="card-text">{{phone_details.description}}</p>
-        <p class="card-text">{{phone_details.cost}}</p>
-        <p class="card-text">{{phone_details.model_phone}}</p>
-        <p class="card-text">{{phone_details.created_date}}</p>
-        <a href="/phone_list/" class="btn btn-primary">На главную</a>
+        <h5 class="card-title">{{object.title}}</h5>
+        <p class="card-text">{{object.description}}</p>
+        <p class="card-text">{{object.cost}}</p>
+        <p class="card-text">{{object.model_phone}}</p>
+        <p class="card-text">{{object.created_date}}</p>
+        <a href="/" class="btn btn-primary">На главную</a>
 
     </div>
 </div>
 
-  <iframe src="{{phone_details.video}}" frameborder="0" width="400" height="250"></iframe>
+  <iframe src="{{object.video}}" frameborder="0" width="400" height="250"></iframe>
+    <table border="2">
+        <tr>
+            <th>Имя</th> <th>Оценка</th> <th>Дата создания</th>
+        </tr>
+        {% for i in object.comment_object.all %}
+        <tr>
+            <td>{{i.name}}</td> <td>{{i.stars}}</td> <td>{{i.date_created}}</td>
+        </tr>
+        {% endfor %}
+    </table>
 
 </center>
 

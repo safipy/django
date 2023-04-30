@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Del Phone</title>
+    <meta charset="UTF-8">
+    <title>Phone List</title>
 </head>
 <body>
-<form action="" class="ui-form">
-<h1>Выберите смартфон для удаления или редактирования</h1>
-<h2><a href=" /">На главную</a></h2>
-<div class="form-row" >
-<ul>
+<center>
+<form action="" class="ui_form">
+<div class="form-row">
+<ol>
     {% for i in object_list %}
     <li>
-        <h3>{{i.title}}</h3>
-        <button><a href="/delete_phone/{{i.id}}/delete/">Удалить</a></button>
-        <button><a href="/phone_update/{{i.id}}/update/">Редактировать</a></button>
+        <h1>{{i.title}}</h1>
+        <img src="{{i.image}}" alt="" width="300" height="300">
+        <button><a href="{{i.title_url}}" class="gradient-button">Перейти к смартфонам</a></button>
+
     </li>
     {% endfor %}
-</ul>
+</ol>
 </div>
 </form>
+</center>
 </body>
 <style>
     {
@@ -83,6 +84,27 @@ body {
    border-bottom: 3px solid #4a90e2;
    transition: all 0.2s ease;
 }
-
+body {
+  background: #d6eaf8;
+}
+.gradient-button {
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  padding: 20px 30px;
+  margin: 10px 20px;
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-image: linear-gradient(to right, #9EEFE1 0%, #4830F0 51%, #9EEFE1 100%);
+  background-size: 200% auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+  transition: .5s;
+}
+.gradient-button:hover {
+  background-position: right center;
+}
 </style>
+
 </html>

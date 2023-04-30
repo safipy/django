@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ad Review</title>
+</head>
+<body>
+<form action="/add-review/" method="post" enctype="multipart/form-data"></form>
+  {% csrf_token %}
+  {{ form.as_p }}
+<input type="submit" value="Добавить Отзыв">
+</body>
+</html>
