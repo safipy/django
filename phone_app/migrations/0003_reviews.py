@@ -5,24 +5,50 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('phone_app', '0002_alter_phone_description'),
+        ("phone_app", "0002_alter_phone_description"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Reviews',
+            name="Reviews",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=50)),
-                ('stars', models.CharField(choices=[('*', '*'), ('**', '**'), ('***', '***'), ('****', '****'), ('*****', '*****')], max_length=100)),
-                ('date_created', models.DateTimeField(auto_now_add=True)),
-                ('phone_choice_comment', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='comment_object', to='phone_app.phone')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=50)),
+                (
+                    "stars",
+                    models.CharField(
+                        choices=[
+                            ("*", "*"),
+                            ("**", "**"),
+                            ("***", "***"),
+                            ("****", "****"),
+                            ("*****", "*****"),
+                        ],
+                        max_length=100,
+                    ),
+                ),
+                ("date_created", models.DateTimeField(auto_now_add=True)),
+                (
+                    "phone_choice_comment",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="comment_object",
+                        to="phone_app.phone",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Оценка',
-                'verbose_name_plural': 'Оценка смартфона',
+                "verbose_name": "Оценка",
+                "verbose_name_plural": "Оценка смартфона",
             },
         ),
     ]

@@ -4,24 +4,46 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Phone',
+            name="Phone",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=100, verbose_name='Название телефона')),
-                ('description', models.TextField(verbose_name='Характеристики')),
-                ('image', models.ImageField(upload_to='', verbose_name='Фото')),
-                ('video', models.URLField(verbose_name='Трейлер')),
-                ('cost', models.PositiveIntegerField(verbose_name='Стоимость')),
-                ('model_phone', models.CharField(choices=[('Простые', 'Простые'), ('Бюджетные', 'Бюджетные'), ('Высокого класса', 'Высокого класса'), ('Премиум класса', 'Премиум класса'), ('Элитные', 'Элитные')], max_length=100, verbose_name='Модели телефона')),
-                ('created_date', models.DateTimeField(auto_now_add=True)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "title",
+                    models.CharField(max_length=100, verbose_name="Название телефона"),
+                ),
+                ("description", models.TextField(verbose_name="Характеристики")),
+                ("image", models.ImageField(upload_to="", verbose_name="Фото")),
+                ("video", models.URLField(verbose_name="Трейлер")),
+                ("cost", models.PositiveIntegerField(verbose_name="Стоимость")),
+                (
+                    "model_phone",
+                    models.CharField(
+                        choices=[
+                            ("Простые", "Простые"),
+                            ("Бюджетные", "Бюджетные"),
+                            ("Высокого класса", "Высокого класса"),
+                            ("Премиум класса", "Премиум класса"),
+                            ("Элитные", "Элитные"),
+                        ],
+                        max_length=100,
+                        verbose_name="Модели телефона",
+                    ),
+                ),
+                ("created_date", models.DateTimeField(auto_now_add=True)),
             ],
         ),
     ]

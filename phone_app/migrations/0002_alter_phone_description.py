@@ -4,15 +4,16 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('phone_app', '0001_initial'),
+        ("phone_app", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='phone',
-            name='description',
-            field=models.TextField(blank=True, null=True, verbose_name='Характеристики'),
+            model_name="phone",
+            name="description",
+            field=models.TextField(
+                blank=True, null=True, verbose_name="Характеристики"
+            ),
         ),
     ]
